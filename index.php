@@ -123,7 +123,7 @@
           <div class="w50">
             <div id="aboutMe">
               <div class="aboutSection">
-                <h3>Hi!<div class="wave">👋</div></h3>
+                <h3>Hi!<span class="wave">👋</span></h3>
                 <p>My name is Rasmus Andersen. I'm 24 years old, I live in Denmark and I have a passion for making fast, flexible and user-friendly web-applications.</p>
                 <p>I'm currently studying multimediadesign at University College Lillebælt (UCL), in pursuit of the ability
                   to provide the best possible user experience through my work - primarily on the web.</p>
