@@ -248,8 +248,6 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <!-- waypoints -->
     <script src="assets/js/jquery.waypoints.min.js"></script>
-    <!-- anime(?).js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- d3.js -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- d3-force -->
@@ -262,10 +260,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
     <!-- custom javascript w/ ng-controller -->
     <script src="assets/js/script.js"></script>
-
-
-    <script>
-
-    </script>
   </body>
 </html>
