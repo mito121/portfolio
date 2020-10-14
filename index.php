@@ -11,11 +11,11 @@
     <!-- Custom -->
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
-  
+
   <body ng-app="app" ng-controller="mainCtrl" id="app">
     <!-- Navigation -->
     <div id="nav">
-      <a href="index.php">
+      <a href="https://webnation.dk/">
         <svg id="logo" data-name="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.22 337.94">
         <path class="logo-svg-1" d="M0,96.32v-95s154-3,172.49-.07C218.91,8.71,238.87,26,250.3,44.9,261.37,59.93,261.76,67,264,77.19A127.81,127.81,0,0,1,266.7,96.4c.22,4,.39,7.8.73,10.68.5,4.23-.18,17.32-3.55,32.63-4.45,20.23-12,32.41-13.33,34.62-4.22,7-12.78,15.82-22.67,22.75s-18,10.29-28.39,11.67c-14.82,2-49.16,4.09-49.16,4.09L90.2,165.37s43.4.43,57.76-1.06c12-1.24,36.9-7,45.63-15.3,7.3-6.92,15.22-27.39,14.77-37.45s-10.23-29.8-17.94-36.39C182,68,159,63,148,62c-22-2-88.35-.53-88.35-.53v82.29Z" transform="translate(0 0.03)"/>
         <path class="logo-svg-2" d="M0,116.91v221H59.61V311l107.08.53,33.75,26.37h91.78ZM57,264.07V230.82l50.06,33.23Z" transform="translate(0 0.03)"/>
@@ -97,14 +97,14 @@
           </span>
         </div>
 
-        <div class="nextSection">
+        <div class="nextSection" id="firstScroll">
           <a class="arrow-wrapper">
             <span class="arrow secondary-first-arrow next"></span>
           </a>
         </div>
       </section>
 
-      
+
       <!-- Section 2 -->
       <section id="about">
         <div class="sectionHeader mobile-padding">
@@ -130,7 +130,7 @@
               </div>
 
               <div id="skills-wrapper" class="aboutSection">
-                <span>Tools I've grown familiar with, when building websites include the following:</span>
+                <span>Tools I've grown familiar with, when building websites include the following: <span class="desktop-only">(mouseover for more info, or even pull if you dare!)</span></span>
                 <svg id="skills-container"></svg>
                 <div id="mobile-skills">
                   <div ng-repeat="skill in skills" ng-class="{ps: skill.color == '#001d26'}" style="border-color: {{skill.color}}; background-color: {{skill.color}};" class="mobile-skill">
@@ -160,7 +160,6 @@
                   <div class="overlay">
                     <div class="overlayHeader">{{item.name}}</div>
                     <div class="overlayText">{{item.role}}</div>
-                    <!--                    <button class="overlayBtn">See more</button>-->
                   </div>
                 </box>
               </div>
@@ -199,7 +198,6 @@
 
         <div class="contactFormWrapper">
           <div ng-cloak id="server_msg" style="background:{{response_color}};" ng-show="response_bin !== ''">{{response}}</div>
-          <!--<form action="assets/php/send_mail.php" method="POST" autocomplete="off">-->
           <form ng-submit="contact_me(name, email, msg)" autocomplete="off">
             <div class="contactInput">
               <label for="contactName">Name</label>
@@ -237,9 +235,6 @@
             <span class="arrow primary-first-arrow next"></span>
           </a>
         </div>
-        <!--        <div id="infoPopover">
-                  To the top!
-                </div>-->
       </div>
 
     </div> <!-- </global-wrapper> -->
@@ -248,6 +243,8 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <!-- waypoints -->
     <script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- lodash for throttle -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
     <!-- d3.js -->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <!-- d3-force -->

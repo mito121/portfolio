@@ -3,34 +3,15 @@ if (location.protocol !== 'https:') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 
-// Particles.js
+/* Particles.js */
 //    particlesJS.load('particles', 'assets/js/particles.json', function () {
 particlesJS.load('particles', 'assets/js/particles-2.json', function () {
 
 });
 
 $(document).ready(function () {
-    // Debounce
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            var later = function () {
-                timeout = null;
-                if (!immediate)
-                    func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow)
-                func.apply(context, args);
-        };
-    }
-
-
     // Smooth scrolling for all links
-    $("a").on('click', function (event) {
+    $("a").on('click', _.throttle(function (event) {
         if (this.hash !== "") {
             event.preventDefault();
 
@@ -49,7 +30,7 @@ $(document).ready(function () {
                 $("." + el.attr("class") + ":last").remove();
             });
         }
-    });
+    }, 700, {trailing: false}));;
 
     // Color selfie on mouseover
     $('.selfie').mousemove(function (e) {
@@ -69,16 +50,22 @@ $(document).ready(function () {
         $('.color', this).css("opacity", "0");
     });
 
-    // Check URL params
-//    var urlString = window.location.hash;
-//    var params = urlString.split("?").pop();
-//    var decoded_msg = atob("WW91ciBlbWFpbCBoYXMgYmVlbiBzZW50IHN1Y2Nlc3NmdWxseSwgYW5kIEkgd2lsbCBnZXQgYmFjayB0byB5b3UgYXMgc29vbiBhcyBwb3NzaWJsZSE=");
-////    var decoded_msg = atob(params);
-//    
-//    console.log(decoded_msg);
+
+
+//  Scroll to next or prev section on keypress (arrow up/down & Page up/down)
+    $(document).keydown(_.throttle(function (e) {
+        if (e.which === 40 || e.which === 34) { // Down
+            e.preventDefault();
+            $("#firstScroll a").click();
+        } else if (e.which === 38 || e.which === 33) { // Up
+            e.preventDefault();
+            $("#sectionCtrls .prevSection a").click();
+        }
+    }, 700, {trailing: false}));
 
 });
 
+/* Waypoints.js */
 
 var $section = $("section");
 var $currentSection = 0;
@@ -101,34 +88,6 @@ $section.waypoint(function (direction) {
         $currentSection--;
     }
 
-    // Scroll to next or prev section on keypress
-//        $(document).keydown(function (e) {
-//            if (e.which === 38 || e.which === 33 || e.which === 40 || e.which === 34) {
-//
-//                e.preventDefault();
-//
-//                if (e.which === 38 || e.which === 33) { // Up
-//                    let prevSection = $currentSection - 1;
-//
-//                    if ($currentSection !== 1) {
-//                        $("#nav .navlink:nth-child(" + prevSection + ") a").click();
-//                    }
-//
-//                } else if (e.which === 40 || e.which === 34) { // Down
-//
-//                    let nextSection = $currentSection + 1;
-//
-//                    if ($currentSection !== 4) {
-//                        $("#nav .navlink:nth-child(" + nextSection + ") a").click();
-//                    } else {
-//                        $("#nav .navlink:nth-child(1) a").click();
-//                    }
-//                }
-//            }
-//
-//        });
-
-    console.log($currentSection);
 
     // Home
     if ($currentSection === 1) {
@@ -275,7 +234,7 @@ const simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide((nodeWidth + 2) / 2));
 
 // json data
-const url = 'http://webnation.dk/portv2/assets/json/skills.json';
+const url = 'https://webnation.dk/portv2/assets/json/skills.json';
 
 d3.json(url, (error, data) => {
     if (error)
@@ -390,12 +349,12 @@ var app = angular.module('app', ['ngAnimate']);
 
 app.controller('mainCtrl', function ($scope, $http) {
 
+    /* WORK */
+
     $http.get(url)
             .success(function (data) {
                 $scope.skills = data.nodes;
             });
-
-    /* WORK */
 
     $scope.boxes = [{
             name: 'HealthPilot',
@@ -412,15 +371,15 @@ app.controller('mainCtrl', function ($scope, $http) {
             name: 'Tinas Klip & Krøl',
             image: 'assets/img/tk.svg',
             role: 'Design, front-end, back-end',
-            heading: 'What is Tinas Klip & Krøl?',
-            desc: "This is a website I built for a mobile hairdresser. The primary purpose of this website is to have a place of reference where a gallery of past work, prices and contact information can be found.",
-            myRole: "",
+            heading: 'Mobile hairdresser',
+            desc: "This is a website I built for a mobile hairdresser. The primary purpose of this website was to have a place of reference where a gallery of past work could be found, along with prices and contact information.",
+            myRole: "This is an ongoing solo project for me. This site is updated, as well as given a redesign approximately once a year. The page is currently run entirely through AngularJS, which results in a great user-experience, but also includes the downside of poor SEO (Search Engine Optimization).",
             link: "https://tinasklip.dk"
         }, {
             name: 'BoligPortal (prototype)',
             image: 'assets/img/boligportal.svg',
             role: 'Design, front-end, back-end',
-            heading: 'What is BoligPortal?',
+            heading: 'BoligPortal (HousingPortal)',
             desc: "This website is a tool for finding, selling, renting or buying apartments, houses or rooms. It is a yet unfinished project that I have been working on by myself in my sparetime. The purpose of this project was primarily the practice of programming a moderately complex web-application run with pure AJAX and with a lot of back-end, as well as to showcase my programming ability when the project is finished.",
             myRole: "",
             link: "http://boligportal.webnation.dk/"
