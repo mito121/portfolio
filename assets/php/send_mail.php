@@ -1,13 +1,11 @@
 <?php
-require_once 'dbconnect.php';
-
 $info = json_decode(file_get_contents("php://input"));
 
-if ($info > '0') {
+if ($info) {
 
-  $name = mysqli_real_escape_string($conn, $info->name);
-  $email = mysqli_real_escape_string($conn, $info->email);
-  $msg = mysqli_real_escape_string($conn, $info->message);
+  $name = $info->name;
+  $email = $info->email;
+  $msg = $info->message;
 
   $to_email = "rasmus.skovhaven@gmail.com";
   $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -47,6 +45,6 @@ if ($info > '0') {
   if (mail($to_email, $subject, $message, $headers)) {
     echo 1;
   } else {
-    echo 2;
+    echo 0;
   }
 }
