@@ -1,32 +1,63 @@
 {
-	"nodes": [
+  "nodes": [
     { "id": 6, "skill": "HTML", "img": "html.png", "color": "#f16529" },
-    { "id": 10, "skill": "Bootstrap", "img": "bootstrap.png", "color": "#563d7c" },
+    {
+      "id": 10,
+      "skill": "Bootstrap",
+      "img": "bootstrap.png",
+      "color": "#563d7c"
+    },
     { "id": 7, "skill": "CSS", "img": "css.png", "color": "#264de4" },
     { "id": 9, "skill": "jQuery", "img": "jquery.png", "color": "#0769ad" },
-		{ "id": 2, "skill": "JavaScript", "img": "js.png", "color": "#d6bf01" },
-		{ "id": 1, "skill": "PHP", "img": "php.png", "color": "#4f5b93" },
-		{ "id": 3, "skill": "WordPress", "img": "wp.png", "color": "#464646" },
-    { "id": 5, "skill": "Adobe Illustrator", "img": "ai.png", "color": "#e7853e" },
-		{ "id": 11, "skill": "MySQL", "img": "mysql.png", "color": "#4479a1" },
+    { "id": 2, "skill": "JavaScript", "img": "js.png", "color": "#d6bf01" },
+    { "id": 1, "skill": "PHP", "img": "php.png", "color": "#4f5b93" },
+    { "id": 3, "skill": "WordPress", "img": "wp.png", "color": "#464646" },
+    {
+      "id": 5,
+      "skill": "Express",
+      "img": "expressjs.png",
+      "color": "#000"
+    },
+    { "id": 11, "skill": "MySQL", "img": "mysql.png", "color": "#4479a1" },
     { "id": 8, "skill": "Git", "img": "git.png", "color": "#f05133" },
-    { "id": 4, "skill": "Adobe Photoshop", "img": "ps.png", "color": "#001d26" },
-		{ "id": 12, "skill": "AngularJS", "img": "angularjs.png", "color": "#b62f32" },
-		{ "id": 13, "skill": "Sass", "img": "sass.png", "color": "#cd669a" }
-	],
-	"links": [
-		{ "target": 2, "source": 0 },
-		{ "target": 3, "source": 1 },
-		{ "target": 4, "source": 2 },
-		{ "target": 5, "source": 3 },
-		{ "target": 5, "source": 4 },
-		{ "target": 8, "source": 5 },
-		{ "target": 1, "source": 6 },
-		{ "target": 10, "source": 7 },
-		{ "target": 11, "source": 8 },
-		{ "target": 12, "source": 9 },
-		{ "target": 6, "source": 10 },
-		{ "target": 6, "source": 11 },
-		{ "target": 11, "source": 12 }
-	]
+    {
+      "id": 4,
+      "skill": "Node.js",
+      "img": "nodejs.png",
+      "color": "#3c873a"
+    },
+    {
+      "id": 12,
+      "skill": "AngularJS",
+      "img": "angularjs.png",
+      "color": "#b62f32"
+    },
+    { "id": 13, "skill": "Sass", "img": "sass.png", "color": "#cd669a" },
+    { "id": 14, "skill": "Vue", "img": "vue.png", "color": "#41b883" },
+    { "id": 15, "skill": "React", "img": "react.png", "color": "#066d89" },
+    { "id": 16, "skill": "MongoDB", "img": "mongo.png", "color": "#3fa037" },
+    { "id": 17, "skill": "C#", "img": "cs.png", "color": "#812F84" },
+    { "id": 18, "skill": ".NET", "img": "dotnet.png", "color": "#68217A" }
+  ],
+  "links": [
+    { "target": 2, "source": 0 },
+    { "target": 3, "source": 1 },
+    { "target": 4, "source": 2 },
+    { "target": 5, "source": 3 },
+    { "target": 5, "source": 4 },
+    { "target": 5, "source": 4 },
+    { "target": 8, "source": 5 },
+    { "target": 1, "source": 6 },
+    { "target": 10, "source": 7 },
+    { "target": 11, "source": 8 },
+    { "target": 12, "source": 9 },
+    { "target": 6, "source": 10 },
+    { "target": 6, "source": 11 },
+    { "target": 11, "source": 12 },
+    { "target": 11, "source": 13 },
+    { "target": 13, "source": 14 },
+    { "target": 8, "source": 15 },
+    { "target": 9, "source": 16 },
+    { "target": 16, "source": 17 }
+  ]
 }
