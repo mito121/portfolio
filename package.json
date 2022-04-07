@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Visit the page: https://webnation.dk",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch --update --style=compressed assets/scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mito121/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mito121/portfolio/issues"
+  },
+  "homepage": "https://github.com/mito121/portfolio#readme",
+  "devDependencies": {
+    "sass": "^1.50.0"
+  }
+}
